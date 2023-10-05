@@ -4,6 +4,9 @@ import firstOne from "@/components/firstOne.vue";
 import secondOne from "@/components/secondOne.vue";
 import  thirdOne from "@/components/thirdOne.vue";
 import fourthOne from "@/components/fourthOne.vue";
+import fifthOne from "@/components/fifthOne.vue";
+import sixthOne from "@/components/sixthOne.vue";
+import seventhOne from "@/components/seventhOne.vue";
 
 
 
@@ -36,6 +39,21 @@ const routes = [
     name: 'fourthOne',
     component: fourthOne
   },
+  {
+    path: '/fifthOne',
+    name: 'fifthOne',
+    component: fifthOne
+  },
+  {
+    path: '/sixthOne',
+    name: 'sixthOne',
+    component: sixthOne
+  },
+  {
+    path: '/seventhOne',
+    name: 'seventhOne',
+    component: seventhOne
+  }
 
 ]
 

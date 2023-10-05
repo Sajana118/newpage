@@ -6,7 +6,7 @@
         <p> ｴｲﾑｹﾞﾝ</p>
         <input type="text" class="text" placeholder="備考詳細備考詳細"/>
         <div class="removeBtn">
-          <span @click="clickButton" class="material-symbols-outlined">close</span>
+          <span @click="clickBtn" class="material-symbols-outlined">close</span>
         </div>
       </div>
 
@@ -18,17 +18,25 @@
         </div>
       </div>
 
-      <div v-if="thirdYellowBtn" class="services">
+      <div v-if="thirdYellowButton" class="services">
         <p>ｻｰﾊﾞﾘｯｸｽ</p>
         <input type="text" class="text" placeholder="備考詳細備考詳細"/>
         <div class="removeBtn">
           <span @click="removeButton" class="material-symbols-outlined">close</span>
         </div>
       </div>
+
+      <div v-if="fourthYellowBtn" class="services">
+        <p>new</p>
+        <input type="text" class="text" placeholder="備考詳細備考詳細"/>
+        <div class="removeBtn">
+          <span @click="hideButton" class="material-symbols-outlined">close</span>
+        </div>
+      </div>
     </div>
   </div>
   <div class="addBtn">
-    <button class="plusButton">＋ 予防接種追加</button>
+    <button @click="buttonPlus" class="plusButton">＋ 予防接種追加</button>
   </div>
 </template>
 <script>
@@ -37,20 +45,31 @@ export default {
     return{
       showYellowDiv:true,
       secondYellowBtn:true,
-      thirdYellowBtn:true,
+      thirdYellowButton:true ,
+      fourthYellowBtn:false
     }
   },
   methods:{
-    clickButton(){
+    clickBtn(){
       this.showYellowDiv=false
     },
-    removeButton(){
-     this.secondYellowBtn = false
-    },
     closeButton(){
-     this.thirdYellowBtn = false
+      this.secondYellowBtn = false
+    },
+    removeButton(){
+     this.thirdYellowButton = false
+    },
+
+    hideButton(){
+     this.fourthYellowBtn = true
+    },
+    buttonPlus(){
+      this.showYellowDiv = true
+      this.fourthYellowBtn = true
+
     }
   }
+
 
 }
 </script>
@@ -68,7 +87,7 @@ export default {
   border-radius: 7px;
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 25px;
   padding-left: 25px;
 }
 .text{
@@ -88,7 +107,7 @@ export default {
   font-size: 20px;
 }
 .addBtn{
-  padding-left: 20%;
+  padding-left: 19%;
 }
 .plusButton{
   background-color: #39a7df;
@@ -98,5 +117,9 @@ export default {
   height: 40px;
   width: 22%;
   font-size: 17px;
+}
+.services p{
+  min-width: 100px;
+
 }
 </style>
